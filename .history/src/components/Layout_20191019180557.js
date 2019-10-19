@@ -5,8 +5,8 @@ import Navbar from "../components/Navbar";
 import "./all.sass";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
-import "../../node_modules/prism-themes/themes/prism-atom-dark.css";
-import "../../prismjs/plugins/line-numbers/prism-line-numbers.css";
+import "prism-themes/themes/prism-atom-dark.css";
+import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
