@@ -1,9 +1,9 @@
 import React from "react";
+import { DiscussionEmbed } from "disqus-react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import Helmet from "react-helmet";
 import { graphql, Link } from "gatsby";
-import { DiscussionEmbed } from "disqus-react";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import "prism-themes/themes/prism-atom-dark.css";
@@ -49,11 +49,6 @@ export const BlogPostTemplate = ({
   );
 };
 
-const disqusConfig = {
-  shortname: process.env.GATSBY_DISQUS_NAME,
-  config: { identifier: slug, title }
-};
-
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
@@ -83,7 +78,6 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
-      <DiscussionEmbed {...disqusConfig} />
     </Layout>
   );
 };

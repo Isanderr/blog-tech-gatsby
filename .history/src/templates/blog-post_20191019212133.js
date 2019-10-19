@@ -49,11 +49,6 @@ export const BlogPostTemplate = ({
   );
 };
 
-const disqusConfig = {
-  shortname: process.env.GATSBY_DISQUS_NAME,
-  config: { identifier: slug, title }
-};
-
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
@@ -83,7 +78,6 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
-      <DiscussionEmbed {...disqusConfig} />
     </Layout>
   );
 };

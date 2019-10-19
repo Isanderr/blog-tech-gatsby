@@ -83,7 +83,6 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
-      <DiscussionEmbed {...disqusConfig} />
     </Layout>
   );
 };
