@@ -78,7 +78,6 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
-      <Disqus identifier={post.id} title={post.frontmatter.title} />
     </Layout>
   );
 };

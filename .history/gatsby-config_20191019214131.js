@@ -97,7 +97,7 @@ module.exports = {
           {
             resolve: `gatsby-plugin-disqus`,
             options: {
-              shortname: `codetechnology`
+              shortname: `your-disqus-shortname`
             }
           }
         ]
