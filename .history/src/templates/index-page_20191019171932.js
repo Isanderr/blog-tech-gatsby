@@ -1,6 +1,5 @@
 import React from "react";
 import "prism-themes/themes/prism-atom-dark.css";
-import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
