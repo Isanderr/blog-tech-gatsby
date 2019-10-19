@@ -63,7 +63,6 @@ export const BlogPostTemplate = ({
                 </ul>
               </div>
             ) : null}
-            <JustComments />
           </div>
         </div>
       </div>
