@@ -1,4 +1,5 @@
 import React from "react";
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import Helmet from "react-helmet";
@@ -7,6 +8,7 @@ import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import "prism-themes/themes/prism-atom-dark.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+
 
 export const BlogPostTemplate = ({
   content,
@@ -17,7 +19,11 @@ export const BlogPostTemplate = ({
   helmet
 }) => {
   const PostContent = contentComponent || Content;
-
+  let disqusConfig = {
+    url: `${config.siteUrl+location.pathname}`,
+    identifier: post.id,
+    title: post.title,
+  }
   return (
     <section className="section">
       {helmet || ""}
@@ -77,6 +83,7 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
+      <Disqus identifier={post.id} title={post.frontmatter.title} />
     </Layout>
   );
 };
@@ -86,6 +93,7 @@ BlogPost.propTypes = {
     markdownRemark: PropTypes.object
   })
 };
+export default BlogPostTemplate;
 export default BlogPost;
 
 export const pageQuery = graphql`

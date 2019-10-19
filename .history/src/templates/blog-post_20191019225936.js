@@ -8,6 +8,7 @@ import Content, { HTMLContent } from "../components/Content";
 import "prism-themes/themes/prism-atom-dark.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 
+
 export const BlogPostTemplate = ({
   content,
   contentComponent,
@@ -86,6 +87,7 @@ BlogPost.propTypes = {
     markdownRemark: PropTypes.object
   })
 };
+export default BlogPostTemplate;
 export default BlogPost;
 
 export const pageQuery = graphql`

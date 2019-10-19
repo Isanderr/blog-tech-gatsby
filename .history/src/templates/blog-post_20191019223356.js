@@ -1,4 +1,5 @@
 import React from "react";
+import Disqus from 'gatsby-plugin-disqus';
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import Helmet from "react-helmet";
@@ -77,6 +78,7 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
+      <Disqus identifier={post.id} title={post.frontmatter.title} />
     </Layout>
   );
 };
@@ -86,6 +88,7 @@ BlogPost.propTypes = {
     markdownRemark: PropTypes.object
   })
 };
+export default BlogPostTemplate;
 export default BlogPost;
 
 export const pageQuery = graphql`
