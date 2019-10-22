@@ -19,8 +19,7 @@ export default class BlogIndexPage extends React.Component {
               textShadow: "2px 4px 6px #000000",
               backgroundColor: "rgba(254, 254, 254, 0.6)",
               color: "white",
-              padding: "1rem",
-              borderRadius: "20px"
+              padding: "1rem"
             }}
           >
             Usiądź na chwilę i poczytaj...

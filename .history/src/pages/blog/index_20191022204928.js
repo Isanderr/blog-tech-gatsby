@@ -20,7 +20,7 @@ export default class BlogIndexPage extends React.Component {
               backgroundColor: "rgba(254, 254, 254, 0.6)",
               color: "white",
               padding: "1rem",
-              borderRadius: "20px"
+              borderRadius: 20px
             }}
           >
             Usiądź na chwilę i poczytaj...
