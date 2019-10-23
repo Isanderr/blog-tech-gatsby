@@ -1,19 +1,31 @@
 ---
-templateKey: 'about-page'
-path: /about
-title: About our values
+templateKey: about-page
+title: O mnie
 ---
-### Shade-grown coffee
-Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
+### 
 
-### Single origin
-Single-origin coffee is coffee grown within a single known geographic origin. Sometimes, this is a single farm or a specific collection of beans from a single country. The name of the coffee is then usually the place it was grown to whatever degree available.
+![moje zdjęcie](/img/zdjęcie-profilowe50.jpg "moje zdjęcie")
 
-### Sustainable farming
-Sustainable agriculture is farming in sustainable ways based on an understanding of ecosystem services, the study of relationships between organisms and their environment. What grows where and how it is grown are a matter of choice and careful consideration for nature and communities.
+## Witam!
 
-### Direct sourcing
-Direct trade is a form of sourcing practiced by some coffee roasters. Advocates of direct trade practices promote direct communication and price negotiation between buyer and farmer, along with systems that encourage and incentivize quality.
+Nazywam się Łukasz Cendrowski i zajmuję się programowaniem od około 4 lat. Wszystko zaczęło się zainteresowaniem grafiką, UX, UI, które z biegiem czasu przerodziło się w naukę Frontendu. Jak zwykle okazało się jednak że sama wiedza o froncie to za mało więc po froncie przyszła naturalnie kolej na backend. 
 
-### Reinvest profits
-We want to truly empower the communities that bring amazing coffee to you. That’s why we reinvest 20% of our profits into farms, local businesses and schools everywhere our coffee is grown. You can see the communities grow and learn more about coffee farming on our blog.
+Przy okazji rozwoju pasji i zainteresowań udało mi się ukończyć CISCO CCNA, co także pomaga w pracy programisty webowego. Dzięki temu można dowiedzieć się nieco więcej o niższych warstwach modelu OSI.
+
+Jako, że jestem typowym samoukiem dużą część swojej wiedzy zawdzięczam wszelkiego rodzaju kursom internetowym i stacjonarnym oraz oczywiście pracy własnej.
+
+Kilka przykładowych kursów, które ukończyłem:
+
+*  Microsoft official course: MS-20698 Installing and Configuring Windows 10
+*  Certyfikat Eduweb.pl Web Design i UX Bootcamp
+*  Certyfikat Eduweb.pl Front-End Developer Bootcamp
+*  Certyfikat CCNA Routing and Switching: Introduction to Network
+*  Certyfikat CCNA Routing and Switching: Routing and Switching Essentials
+*  Certyfikat Linux Academy Source Control with Git
+*  Certyfikat Linux Academy LPIC-1: System Administrator Exam 101 (v5 Objectives)
+*  Certyfikat Linux Academy LPIC-1: System Administrator - Exam 102 (v5 Objectives)
+*  Certyfikat Linux Academy LPI Linux Essentials
+
+
+
+W blogu postanowiłem dzielić się swoją wiedzą, spostrzeżeniami oraz opisywać rzeczy którymi aktualnie się interesuję lub z którymi pracuje.
