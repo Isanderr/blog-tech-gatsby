@@ -9,7 +9,7 @@ mainpitch:
   description: >
     Możecie na nim poczytać o następujących tematach: Frontend, Backend, DevOps,
     sieci komputerowe, systemy operacyjne, nowe technologie.  Myślę, że każdy
-    znajdzie tutaj coś dla siebie 
+    znajdzie tutaj coś dla siebie.
 description: Zapraszam do poniższych artykułów.
 intro:
   blurbs: []
