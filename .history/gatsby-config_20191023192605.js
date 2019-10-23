@@ -35,9 +35,9 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://codetechnology.netlify.com/",
-        sitemap: "https://codetechnology.netlify.com/sitemap.xml",
-        policy: [{ userAgent: "*", allow: "/" }]
+        host: `siteURL`,
+        sitemap: `{siteURL}/sitemmap.xml`,
+        policy: [{ userAgent: "*", disallow: "" }]
       }
     },
     "gatsby-plugin-sharp",

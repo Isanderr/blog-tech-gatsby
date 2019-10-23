@@ -32,14 +32,14 @@ module.exports = {
         name: "images"
       }
     },
-    {
-      resolve: "gatsby-plugin-robots-txt",
-      options: {
-        host: "https://codetechnology.netlify.com/",
-        sitemap: "https://codetechnology.netlify.com/sitemap.xml",
-        policy: [{ userAgent: "*", allow: "/" }]
-      }
-    },
+    // {
+    //   resolve: "gatsby-plugin-robots-txt",
+    //   options: {
+    //     host: `siteURL`,
+    //     sitemap: `{siteURL}/sitemmap.xml`,
+    //     policy: [{ userAgent: "*", disallow: "" }]
+    //   }
+    // },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
