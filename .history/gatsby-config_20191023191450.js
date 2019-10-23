@@ -37,7 +37,7 @@ module.exports = {
       options: {
         host: `https://codetechnology.netlify.com/`,
         sitemap: `{https://codetechnology.netlify.com/}/sitemmap.xml`,
-        policy: [{ userAgent: "*", disallow: "" }]
+        policy: [{ userAgent: "*", disoallow: "" }]
       }
     },
     "gatsby-plugin-sharp",
