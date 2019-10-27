@@ -63,7 +63,7 @@ sudo EXTERNAL_URL="http://gitlab.example.com" apt-get install gitlab-ee
 
 
 
-I to wszystko. Podczas pierwszego uruchomienia w przeglądarce zostaniemy poproszeni o ustanowienie hasła. Do logowania w polu username wpisujemy root . 
+I to wszystko. Podczas pierwszego uruchomienia w przeglądarce zostaniemy poproszeni o ustanowienie hasła. Do logowania w polu username wpisujemy root.
 
 
 
