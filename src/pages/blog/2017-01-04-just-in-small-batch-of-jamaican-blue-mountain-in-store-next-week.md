@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Instalacja Kali Linux 2019.3 in VMware Workstation
+title: Instalacja Kali Linux 2019.3 na VMware Workstation
 date: 2019-11-02T15:04:10.000Z
 description: >-
   Poniżej przedstawię podstawową instalację najbardziej znanej dystrybucji
