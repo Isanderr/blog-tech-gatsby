@@ -1,34 +1,113 @@
 ---
-templateKey: "blog-post"
-title: "Just in: small batch of Jamaican Blue Mountain in store next week"
-date: 2017-01-04T15:04:10.000Z
-featuredpost: true
+templateKey: blog-post
+title: Instalacja Kali Linux 2019.3 in VMware Workstation
+date: 2019-11-02T15:04:10.000Z
 description: >-
-  We’re proud to announce that we’ll be offering a small batch of Jamaica Blue
-  Mountain coffee beans in our store next week.
+  Poniżej przedstawię podstawową instalację najbardziej znanej dystrybucji
+  Linuxa przeznaczonej do wykonywania pentatestów. 
+featuredpost: true
+featuredimage: /img/title-kali.jpg
 tags:
-  - jamaica
-  - green beans
-  - flavor
-  - tasting
+  - kali
+  - linux
+  - hakowanie
+  - pentatesty
+  - instalcja
+  - vmware
+  - wirtualka
+  - bezpieczeństwo
+  - cybersecurity
 ---
+![kali_linux_desktop](/img/title-kali.jpg "kali_linux_desktop")
 
-We expect the shipment of a limited quantity of green beans next Monday. We’ll be offering the roasted beans from Tuesday, but quantities are limited, so be quick.
+## Pobranie najnowszego obrazu ISO Kali Linux
 
-Blue Mountain Peak is the highest mountain in Jamaica and one of the highest peaks in the Caribbean at 7,402 ft. It is the home of Blue Mountain coffee and their famous tours. It is located on the border of the Portland and Saint Thomas parishes of Jamaica.
+W celu pobrania najnowszej wersji w/w systemu udamy się pod ten link <https://www.kali.org/downloads/>. Jest to oficjalna strona dystrybucji. Ja osobiście używam wersji **Kali Linux 64-Bit** i taką też zainstalujemy. Jeżeli potrzebujesz innego wydania, instalacja przebiega w ten sam sposób.
 
-## A little history
 
-The Blue Mountains are considered by many to be a hiker's and camper's paradise. The traditional Blue Mountain trek is a 7-mile hike to the peak and consists of a 3,000-foot increase in elevation. Jamaicans prefer to reach the peak at sunrise, thus the 3–4 hour hike is usually undertaken in darkness. Since the sky is usually very clear in the mornings, Cuba can be seen in the distance.
 
-> Some of the plants found on the Blue Mountain cannot be found anywhere else in the world and they are often of a dwarfed sort.
+![kali-linux-verion](/img/version-kali.png "kali-linux-verion")
 
-This is mainly due to the cold climate which inhibits growth. The small coffee farming communities of Claverty Cottage and Hagley Gap are located near the peak.
+## Przygotowanie wirtualnego środowiska w VMware
 
-## What you need to know before trying
+Po uruchomieniu **VMware** naszym oczom ukazuję się następujący ekran.
 
-Jamaican Blue Mountain Coffee or Jamaica Blue Mountain Coffee is a classification of coffee grown in the Blue Mountains of Jamaica. The best lots of Blue Mountain coffee are noted for their mild flavor and lack of bitterness. Over the past few decades, this coffee has developed a reputation that has made it one of the most expensive and sought-after coffees in the world. Over 80% of all Jamaican Blue Mountain Coffee is exported to Japan. In addition to its use for brewed coffee, the beans are the flavor base of Tia Maria coffee liqueur.
+![vmware-home](/img/vmware-home.jpg "vmware-home")
 
-Jamaican Blue Mountain Coffee is a globally protected certification mark, meaning only coffee certified by the Coffee Industry Board of Jamaica can be labeled as such. It comes from a recognized growing region in the Blue Mountain region of Jamaica, and its cultivation is monitored by the Coffee Industry Board of Jamaica.
+W otwartym oknie klikamy „Create a New Virtual Machine”. Wyskakuje nam okno New Virtual Machine Wizard wybieramy w nim Installer disc image file (iso) i wskazujemy na wcześniej pobrany system operacyjny.
 
-The Blue Mountains are generally located between Kingston to the south and Port Antonio to the north. Rising 7,402 ft, they are some of the highest mountains in the Caribbean. The climate of the region is cool and misty with high rainfall. The soil is rich, with excellent drainage. This combination of climate and soil is considered ideal for coffee.
+![vmware-disk](/img/vmware_new_virtual_machine_wizard_disk_image.jpg "vmware-disk")
+
+Następnie w oknie wyboru **„Select a Guest Operating System”** wybieramy dystrybucję **Debian 9.x 64-bit** gdyż właśnie na jej podstawie został stworzony **Kali Linux 2019.3.**
+
+Kolejnym krokiem jest nazwanie naszej wirtualnej maszyny oraz wskazanie miejsca gdzie ma być ona przechowywana.
+
+W oknie **Specify Disk Capacity** ustalamy jak duża przestrzeń ma zostać na starcie zarezerwowane przez nasz wirtualny system. Możemy zostawić tą wartość na poziomie 20GB gdyż VMware i tak w miarę potrzeb będzie poszerzał tą przestrzeń. Zaznaczamy także **"Split virtual disk into multiple files"** i przechodzimy dalej.
+
+![vmware-disk-capacity](/img/vmware_new_virtual_machine_wizard_specify_disk_capacity.jpg "vmware-disk-capacity")
+
+Nasze środowisko jest już prawie gotowe, w kolejnym oknie wybieramy jeszcze **Customize Hardware**, przechodzimy do zakładki **memory** i tutaj według uznania oraz specyfikacji naszego komputera możemy przydzielić odpowiednie zasoby maszynie wirtualnej. W moim przypadku będzie to 8 GB RAM, natomiast w zakładce **procesor** wybiorę 4 rdzenie. Klikamy Close oraz finish aby zakończyć proces tworzenia wirtualki.
+
+## Instalacja Kali Linux
+
+W oknie domowym VMware wybieramy utworzone przez nas środowisko i klikamy **„Play virtual machine”**
+
+Po chwili pojawia nam się okno instalacyjne naszego systemu. Wybieramy w nim **Graphical install.** 
+
+![kali-linux-graphical-install](/img/kali_linux_installation_boot_menu.jpg "kali-linux-graphical-install")
+
+
+
+Następnie wybieramy kolejno:  **język systemu, nasza lokalizację, konfigurację klawiatury.** 
+
+Instalowany system dogra odpowiednie komponenty i po chwili jesteśmy poproszeni o podanie naszego **hostname**. Jest to nic innego jak nazwa naszej maszyny wirtualnej jaka będzie widoczna w sieci.
+
+![kali-linux-hostname](/img/install_kali_linux_2017_in_vmware_workstation_12_configure_the_network_screenshot.jpg "kali-linux-hostname")
+
+Następnie wybieram nazwę naszej **domeny**, jeżeli żadnej nie posiadamy wpisujemy w pole cokolwiek i przechodzimy dalej.
+
+
+
+W kolejnym oknie ustanawiamy **hasło** które posłuży nam do zalogowania się na użytkownika **root**. Lepiej nie pomijać tego okna i od razu ustanowić odpowiednie hasło. 
+
+![kali-linux-password](/img/install_kali_linux_2017_in_vmware_workstation_12_set_up_users_and_password_screenshot.jpg "kali-linux-password")
+
+Po wprowadzeniu hasło przechodzimy dalej i ustawiamy nasza **strefę czasową**.
+
+Następnie jesteśmy poproszeni o wybranie w jaki sposób chcemy utworzyć partycję na naszym dysku. Polecam opcję **„Guided – use entire disk”**. Jest ona wystarczając dla naszej maszyny wirtualnej.
+
+Kolejnym krokiem jest wybór dysku na którym ma być ona utworzona. Wybieramy **„sda, VMware virtual disk”**.
+
+![kali-linux-partition-disk](/img/install_kali_linux_2017_in_vmware_workstation_12_partition_disk_select_disk_partition_screenshot.jpg "kali-linux-partition-disk")
+
+W następnym oknie wybieramy opcje **„All files in one partition”** i klikamy continue.
+
+Widzimy potwierdzenie zmian jakie chcemy wprowadzić. Przechodzimy dalej.
+
+Następnie jesteśmy pytani czy na pewno chcemy zapisać zmiany na dysku klikamy **„yes”** i przechodzimy dalej. 
+
+![kali-linux-partion](/img/install_kali_linux_2017_in_vmware_workstation_12_disk_partition_confirmation_screenshot.jpg "kali-linux-partition")
+
+**_System przystępuje do instalacji._**
+
+Po jej ukończeniu jesteśmy poproszeni o wybranie **network mirror dla Package managera**. Wybieramy **"yes"**, następnie zapytani o **http proxy** zostawiamy pole puste i przechodzimy dalej.
+
+
+
+**Instalacja GRUB boot loader**
+
+W widocznym oknie zapytani o to czy chcemy zainstalować **GRUB** wybieramy **"yes"**. Następnie wskazujemy boot loader device którym będzie **/dev/sda**. 
+
+![kali-linux-grub](/img/install_kali_linux_2017_in_vmware_workstation_12_select_grub_boot_loader_device_screenshot.jpg "kali-linux-grub")
+
+System kończy proces instalacji i to tyle. Możemy uruchomić nasz nowo zainstalowany system operacyjny.
+
+Jako dane do zalogowania używamy w polu login Username: **root** oraz wpisujemy zdefiniowane podczas instalacji hasło.
+
+![kali-linux-finish](/img/installation-finish.jpg "kali-linux-finish")
+
+Przydatne linki:
+
+[https://www.kali.org/](https://www.kali.org/)
+
+[https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html)
