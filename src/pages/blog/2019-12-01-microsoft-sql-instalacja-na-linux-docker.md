@@ -3,8 +3,8 @@ templateKey: blog-post
 title: 'Microsoft SQL instalacja na Linux, Docker'
 date: 2019-12-01T19:01:59.281Z
 description: >-
-  Krótki opis instalacji Microsoft SQL bezpośrednio na Linuxie (Fedora, CentOS),
-  oraz z wykorzystaniem Dockera. 
+  Krótki opis instalacji Microsoft SQL Serwer 2017 bezpośrednio na Linuxie
+  (Fedora, CentOS), oraz z wykorzystaniem Dockera. 
 featuredpost: true
 featuredimage: /img/sql-tutorials.png
 tags:
@@ -20,14 +20,16 @@ tags:
 ---
 ![SQL](/img/sql-tutorials.png "SQL")
 
+> Microsoft SQL Server (MS SQL) – system zarządzania bazą danych, wspierany i rozpowszechniany przez korporację Microsoft. Jest to główny produkt bazodanowy tej firmy, który charakteryzuje się tym, iż jako język zapytań używany jest przede wszystkim Transact-SQL, który stanowi rozwinięcie standardu ANSI/ISO. 
+>
+> _https://pl.wikipedia.org/wiki/Microsoft_SQL_Server_
+
 ## **Linux serwer**
 
 **Ściągamy potrzebne repozytoria oraz wykonujemy wstępną konfigurację**
 
 ```bash
-sudo curl –o /etc/yum.repos.d/mssql-server.repo
-
-https://packages.microsoft.com/config/rhel/7/mssql-server-2017.repo
+sudo curl –o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/7/mssql-server-2017.repo
 ```
 
 **Instalacja serwera SQL**
@@ -52,18 +54,14 @@ sudo systemctl status mssql-server
 
 ```bash
 sudo firewall-cmd –zone=public –add-port=1433/tcp –permanent
-```
 
-```bash
 sudo firewall-cmd –reload
 ```
 
 **Instalacja narzędzi command-line**
 
 ```bash
-sudo curl –o /etc/yum.repos.d/msprod.repo
-
-https://packages.microsoft.com/config/rhel/7/prod.repo
+sudo curl –o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/7/prod.repo
 
 sudo yum install –y mssql-tools unixODBC-devel
 
