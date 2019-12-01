@@ -21,8 +21,6 @@ tags:
 ![SQL](/img/sql-tutorials.png "SQL")
 
 > Microsoft SQL Server (MS SQL) – system zarządzania bazą danych, wspierany i rozpowszechniany przez korporację Microsoft. Jest to główny produkt bazodanowy tej firmy, który charakteryzuje się tym, iż jako język zapytań używany jest przede wszystkim Transact-SQL, który stanowi rozwinięcie standardu ANSI/ISO. 
->
-> _https://pl.wikipedia.org/wiki/Microsoft_SQL_Server_
 
 ## **Linux serwer**
 
@@ -151,3 +149,7 @@ Przydatne linki:
 <https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-red-hat?view=sql-server-2017>
 
 <https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-2017&pivots=cs1-bash>
+
+
+
+<https://pl.wikipedia.org/wiki/Microsoft_SQL_Server>
