@@ -26,9 +26,7 @@ tags:
 
 ```bash
 sudo curl –o /etc/yum.repos.d/mssql-server.repo
-```
 
-```bash
 https://packages.microsoft.com/config/rhel/7/mssql-server-2017.repo
 ```
 
@@ -64,25 +62,15 @@ sudo firewall-cmd –reload
 
 ```bash
 sudo curl –o /etc/yum.repos.d/msprod.repo
-```
 
-```bash
 https://packages.microsoft.com/config/rhel/7/prod.repo
-```
 
-```bash
 sudo yum install –y mssql-tools unixODBC-devel
-```
 
-```bash
 echo ‘export PATH=”$PATH:/opt/mssql-tools/bin”’ >> ~/.bash_profile
-```
 
-```bash
 echo ‘export PATH=”$PATH:/opt/mssql-tools/bin”’ >> ~/.bashrc
-```
 
-```bash
 source ~/.bashrc
 ```
 
@@ -96,9 +84,7 @@ sqlcmd –S localhost –U SA –P ‘Password’
 
 ```bash
 CREATE DATABASE Test;
-```
 
-```bash
 GO
 ```
 
@@ -106,9 +92,7 @@ GO
 
 ```bash
 SELECT name FROM sys.databases;
-```
 
-```bash
 GO
 ```
 
@@ -124,17 +108,11 @@ sudo docker pull mcr.microsoft.com/mssql/server:2017-latest
 
 ```bash
 sudo docker run –e ‘ACCEPT_EULA=Y’ \
-```
 
-```bash
 -e ‘SA_PASSWORD=Password’ \
-```
 
-```bash
 -p 1433:1433 –name sql1 \
-```
 
-```bash
 -d mcr.microsoft.com/mssql/server:2017-latest
 ```
 
@@ -154,9 +132,6 @@ sudo docker exec –it sql1 ”bash”
 
 ```bash
 /opt/mssql-tools/bin/sqlcmd –S localhost –U SA \
-```
-
-```bash
 -P ‘Password’
 ```
 
@@ -170,8 +145,11 @@ CREATE DATABASE test1;
 
 ```bash
 SELECT name FROM sys.databases;
-```
-
-```bash
 GO
 ```
+
+Przydatne linki:
+
+<https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-red-hat?view=sql-server-2017>
+
+<https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-2017&pivots=cs1-bash>
