@@ -21,9 +21,12 @@ Kilka przykładowych kursów, które ukończyłem:
 * Certyfikat Eduweb.pl Front-End Developer Bootcamp
 * Certyfikat CCNA Routing and Switching: Introduction to Network
 * Certyfikat CCNA Routing and Switching: Routing and Switching Essentials
+* Certyfikat CCNA Routing and Switching: Scaling Networks
+* Certyfikat CCNA Routing and Switching: Connecting Networks
 * Certyfikat Linux Academy Source Control with Git
 * Certyfikat Linux Academy LPIC-1: System Administrator Exam 101 (v5 Objectives)
 * Certyfikat Linux Academy LPIC-1: System Administrator - Exam 102 (v5 Objectives)
 * Certyfikat Linux Academy LPI Linux Essentials
+* Certyfikat Linux Academy Kali Linux Deep Dive
 
 W blogu postanowiłem dzielić się swoją wiedzą, spostrzeżeniami oraz opisywać rzeczy którymi aktualnie się interesuję lub z którymi pracuje.
