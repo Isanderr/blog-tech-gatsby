@@ -20,11 +20,11 @@ tags:
 ---
 ![kali_linux_desktop](/img/title-kali.jpg "kali_linux_desktop")
 
+Kali Linux – dystrybucja systemu operacyjnego Linux bazująca na Debian przeznaczona głównie do łamania zabezpieczeń i testów penetracyjnych czy też audytów bezpieczeństwa
+
 ## Pobranie najnowszego obrazu ISO Kali Linux
 
 W celu pobrania najnowszej wersji w/w systemu udamy się pod ten link <https://www.kali.org/downloads/>. Jest to oficjalna strona dystrybucji. Ja osobiście używam wersji **Kali Linux 64-Bit** i taką też zainstalujemy. Jeżeli potrzebujesz innego wydania, instalacja przebiega w ten sam sposób.
-
-
 
 ![kali-linux-verion](/img/version-kali.png "kali-linux-verion")
 
@@ -56,8 +56,6 @@ Po chwili pojawia nam się okno instalacyjne naszego systemu. Wybieramy w nim **
 
 ![kali-linux-graphical-install](/img/kali_linux_installation_boot_menu.jpg "kali-linux-graphical-install")
 
-
-
 Następnie wybieramy kolejno:  **język systemu, nasza lokalizację, konfigurację klawiatury.** 
 
 Instalowany system dogra odpowiednie komponenty i po chwili jesteśmy poproszeni o podanie naszego **hostname**. Jest to nic innego jak nazwa naszej maszyny wirtualnej jaka będzie widoczna w sieci.
@@ -66,13 +64,11 @@ Instalowany system dogra odpowiednie komponenty i po chwili jesteśmy poproszeni
 
 Następnie wybieram nazwę naszej **domeny**, jeżeli żadnej nie posiadamy wpisujemy w pole cokolwiek i przechodzimy dalej.
 
-
-
 W kolejnym oknie ustanawiamy **hasło** które posłuży nam do zalogowania się na użytkownika **root**. Lepiej nie pomijać tego okna i od razu ustanowić odpowiednie hasło. 
 
 ![kali-linux-password](/img/install_kali_linux_2017_in_vmware_workstation_12_set_up_users_and_password_screenshot.jpg "kali-linux-password")
 
-Po wprowadzeniu hasło przechodzimy dalej i ustawiamy nasza **strefę czasową**.
+Po wprowadzeniu hasło przechodzimy dalej i ustawiamy nasza **strefę czasową**.
 
 Następnie jesteśmy poproszeni o wybranie w jaki sposób chcemy utworzyć partycję na naszym dysku. Polecam opcję **„Guided – use entire disk”**. Jest ona wystarczając dla naszej maszyny wirtualnej.
 
@@ -88,11 +84,9 @@ Następnie jesteśmy pytani czy na pewno chcemy zapisać zmiany na dysku klikamy
 
 ![kali-linux-partion](/img/install_kali_linux_2017_in_vmware_workstation_12_disk_partition_confirmation_screenshot.jpg "kali-linux-partition")
 
-**_System przystępuje do instalacji._**
+_**System przystępuje do instalacji.**_
 
 Po jej ukończeniu jesteśmy poproszeni o wybranie **network mirror dla Package managera**. Wybieramy **"yes"**, następnie zapytani o **http proxy** zostawiamy pole puste i przechodzimy dalej.
-
-
 
 **Instalacja GRUB boot loader**
 
@@ -108,6 +102,8 @@ Jako dane do zalogowania używamy w polu login Username: **root** oraz wpisujemy
 
 Przydatne linki:
 
-[https://www.kali.org/](https://www.kali.org/)
+[https://www.kali.org/
+](https://www.kali.org/)
 
-[https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html)
+[https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html
+](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html)
