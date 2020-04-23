@@ -6,7 +6,7 @@ description: >-
   Postanowiłem napisać serię o jednym z najbardziej popularnych Frameworów dla
   deweloperów JavaScript jakim niewątpliwie jest Angular. 
 featuredpost: true
-featuredimage: /img/angular.png
+featuredimage: /img/angular800.jpg
 tags:
   - Angular AngularCLI Angular start Node.js NPM ng
 ---
