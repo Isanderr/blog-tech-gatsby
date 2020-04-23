@@ -44,8 +44,6 @@ Angular jest open-sourcową opartą na TypeScript platformą do budowania strony
 
 \- pozwala budować PWA (Progressive Web Apps)
 
-
-
 ## Instalacja
 
 Niezależnie od tego czy pracujemy na Windowsie, Os, czy Linuxie do korzystania z Angulara potrzebujemy zainstalować na naszej maszynie Node.js oraz NPM, Node.js przynajmniej w wersji 8.9 lub wyższej, NPM 5.5.1 lub wyższej.
@@ -58,9 +56,9 @@ Przechodzimy do strony <https://nodejs.org/en/> wybieramy wersję LTS z długim 
 
 W przypadku Linuxa otwieramy terminal i wpisujemy 
 
-`sudo apt install nodejs`
+`sudo apt install nodejs`
 
-`sudo apt install npm`
+`sudo apt install npm`
 
 **Potwierdzenie poprawności instalacji**
 
@@ -72,9 +70,7 @@ Aby potwierdzić, że instalacja przebiegła prawidłowo zarówno w Windowsie ja
 
 Powinniśmy zobaczyć jakie wersje oprogramowania zainstalowane są w systemie.
 
-![ubuntu terminal version](/img/1.jpg "ubuntu terminal version")
-
-
+![ubuntu terminal version](/img/1-g.jpg "ubuntu terminal version")
 
 ## Instalacja Angular CLI
 
@@ -92,11 +88,9 @@ flaga –g sprawia, że CLI zainstaluje się globalnie na naszym systemie.
 
 Proces instalacji trwa kilka chwil. W celu sprawdzenie zainstalowanej wersji wpisujemy w wierszu poleceń/terminalu:
 
-`ng version `
+`ng version`
 
-![ubuntu terminal ng version](/img/2.jpg "ubuntu terminal ng version")
-
-
+![ubuntu terminal ng version](/img/2-g.jpg "ubuntu terminal ng version")
 
 W celu wyświetlenie innych dostępnych poleceń wpisujemy:
 
@@ -104,13 +98,13 @@ W celu wyświetlenie innych dostępnych poleceń wpisujemy:
 
 Znajdziemy tam następujące komendy:
 
-![ubuntu terminal ng help](/img/3.jpg "ubuntu terminal ng help")
+![ubuntu terminal ng help](/img/3-g.jpg "ubuntu terminal ng help")
 
 ## Angular CLI – tworzenie nowego projektu
 
 Do utworzenia nowego projektu możemy użyć Angular CLI jest to forma zalecana przez deweloperów Googla, aby to zrobić otwieramy wiersz poleceń/terminal przechodzimy do katalogu, w którym chcemy rozpocząć projekt i wpisujemy:
 
-`ng new first_app`
+`ng new first_app`
 
 „first_app” możemy zastąpić dowolną nazwą naszej aplikacji.
 
@@ -164,7 +158,7 @@ _tslint.json_: plik konfiguracyjny TSlint (narzędzie analityczne)
 
 Angular CLI daje nam możliwość kompletnego uruchomienia naszej aplikacji w środowisku deweloperskim na naszym systemie. Aby to zrobić przechodzimy w wierszu poleceń/terminalu do katalogu, w którym utworzyliśmy nasza aplikację, w moim przypadku będzie to „first_app”
 
-`cd first_app`
+`cd first_app`
 
 następnie możemy uruchomić aplikację wpisując polecenie:
 
@@ -172,7 +166,7 @@ następnie możemy uruchomić aplikację wpisując polecenie:
 
 Po skompilowaniu naszej aplikacji będzie ona dostępna w oknie przeglądarki pod adresem <http://localhost:4200/> . Strona, która nam się ukaże zawiera umieszczone przez deweloperów Angulara podstawowe informacje o frameworku oraz inne przydatne linki.
 
-![angular welcome ](/img/4.jpg "angular welcome")
+![angular welcome ](/img/4-g.jpg "angular welcome")
 
 Jeżeli chcemy możemy dodać do polecenia flagę _–open_ wtedy aplikacja otworzy się automatycznie w domyślnej przeglądarce systemowej.
 
@@ -180,8 +174,6 @@ Jeżeli chcemy możemy dodać do polecenia flagę _–open_ wtedy aplikacja otwo
 
 Możemy także zdefiniować hosta oraz port, na którym chcemy uruchomić naszą Angularową aplikację:
 
-`ng serve –host 0.0.0.0 – port 8080`
-
-
+`ng serve –host 0.0.0.0 – port 8080`
 
 To tyle jeżeli chodzi o instalację środowiska oraz narzędzia jakim jest Angular CLI. W kolejnych postach postaram się przedstawić więcej informacji o samym Angularze oraz stworzyć kilka prostych projektów.
