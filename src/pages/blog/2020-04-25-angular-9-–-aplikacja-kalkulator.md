@@ -107,7 +107,7 @@ Ponieważ nie dodaliśmy routingu do aplikacji musimy umieścić nasz komponent 
 
 Przechodzimy do utworzonego przez nas wcześniej komponentu, a dokładniej _src/app/calculator/calculator.component.html_ i zastępujemy istniejący tam kod poniższym:
 
-```html
+```js
 <div class="calculator">
   <input type="text" class="calculator-screen" value="0" disabled />
   <div class="calculator-keys">
@@ -410,7 +410,7 @@ export class CalculatorComponent implements OnInit {
 
 Pozostaje nam tylko dodać metody (_getOperation, getNumber, getDecimal, clear_) oraz zdarzenia (_click_) do utworzonego wcześniej pliku html naszego komponentu. Poniżej uzupełniony plik _src/app/calculator/calculator.component.html_ 
 
-```html
+```js
 <div class="calculator">  <input type="text" class="calculator-screen" [value]="currentNumber" disabled />  <div class="calculator-keys">    <!-- operators -->    <button type="button" (click)="getOperation('+')" class="operator" value="+">+</button>    <button type="button" (click)="getOperation('-')" class="operator" value="-">-</button>    <button type="button" (click)="getOperation('*')" class="operator" value="*">&times;</button>    <button type="button" (click)="getOperation('/')" class="operator" value="/">&divide;</button>    <!-- digits -->    <button type="button" (click)="getNumber('7')" value="7">7</button>    <button type="button" (click)="getNumber('8')" value="8">8</button>    <button type="button" (click)="getNumber('9')" value="9">9</button>    <button type="button" (click)="getNumber('4')" value="4">4</button>    <button type="button" (click)="getNumber('5')" value="5">5</button>    <button type="button" (click)="getNumber('6')" value="6">6</button>    <button type="button" (click)="getNumber('1')" value="1">1</button>    <button type="button" (click)="getNumber('2')" value="2">2</button>    <button type="button" (click)="getNumber('3')" value="3">3</button>    <button type="button" (click)="getNumber('0')" value="0">0</button>    <!-- decimal-reset-equal -->    <button type="button" (click)="getDecimal()" class="decimal" value=".">.</button>    <button type="button" (click)="clear()" class="all-clear" value="all-clear">AC</button>    <button type="button" (click)="getOperation('=')" class="equal-sign" value="=">=</button>  </div></div>
 ```
 
