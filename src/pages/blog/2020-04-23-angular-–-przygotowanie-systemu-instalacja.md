@@ -15,7 +15,9 @@ tags:
   - NPM
   - ng
   - Angular9
-  - ''
+  - instalacja angular
+  - instalacja node.js
+  - instalacja npm
 ---
 ![angular](/img/angular.png "angular")
 
@@ -65,11 +67,11 @@ Przechodzimy do strony <https://nodejs.org/en/> wybieramy wersję LTS z długim 
 
 W przypadku Linuxa otwieramy terminal i wpisujemy 
 
-```
+```bash
 sudo apt install nodejs
 ```
 
-```
+```bash
 sudo apt install npm
 ```
 
@@ -77,11 +79,11 @@ sudo apt install npm
 
 Aby potwierdzić, że instalacja przebiegła prawidłowo zarówno w Windowsie jak i Linuxie otwieramy wiersz poleceń/terminal i wpisujemy:
 
-```
+```bash
 node –v
 ```
 
-```
+```bash
 npm –v
 ```
 
@@ -97,7 +99,7 @@ Do instalacji Angular CLI wykorzystamy zainstalowany wcześniej NPM.
 
 Otwieramy wiersz poleceń/terminal i wpisujemy:
 
-```
+```bash
 npm install –g @angular/cli
 ```
 
@@ -107,7 +109,7 @@ flaga –g sprawia, że CLI zainstaluje się globalnie na naszym systemie.
 
 Proces instalacji trwa kilka chwil. W celu sprawdzenie zainstalowanej wersji wpisujemy w wierszu poleceń/terminalu:
 
-```
+```bash
 ng version
 ```
 
@@ -115,7 +117,7 @@ ng version
 
 W celu wyświetlenie innych dostępnych poleceń wpisujemy:
 
-```
+```bash
 ng help
 ```
 
@@ -127,7 +129,7 @@ Znajdziemy tam następujące komendy:
 
 Do utworzenia nowego projektu możemy użyć Angular CLI jest to forma zalecana przez deweloperów Googla, aby to zrobić otwieramy wiersz poleceń/terminal przechodzimy do katalogu, w którym chcemy rozpocząć projekt i wpisujemy:
 
-```
+```bash
 ng new first_app
 ```
 
@@ -183,13 +185,13 @@ _tslint.json_: plik konfiguracyjny TSlint (narzędzie analityczne)
 
 Angular CLI daje nam możliwość kompletnego uruchomienia naszej aplikacji w środowisku deweloperskim na naszym systemie. Aby to zrobić przechodzimy w wierszu poleceń/terminalu do katalogu, w którym utworzyliśmy nasza aplikację, w moim przypadku będzie to „first_app”
 
-```
+```bash
 cd first_app
 ```
 
 następnie możemy uruchomić aplikację wpisując polecenie:
 
-```
+```bash
 ng serve
 ```
 
@@ -199,14 +201,14 @@ Po skompilowaniu naszej aplikacji będzie ona dostępna w oknie przeglądarki po
 
 Jeżeli chcemy możemy dodać do polecenia flagę _–open_ wtedy aplikacja otworzy się automatycznie w domyślnej przeglądarce systemowej.
 
-```
-ng serve –open
+```bash
+ng serve -–open
 ```
 
 Możemy także zdefiniować hosta oraz port, na którym chcemy uruchomić naszą Angularową aplikację:
 
 ```
-ng serve –host 0.0.0.0 – port 8080
+ng serve –-host 0.0.0.0 –-port 8080
 ```
 
 To tyle jeżeli chodzi o instalację środowiska oraz narzędzia jakim jest Angular CLI. W kolejnych postach postaram się przedstawić więcej informacji o samym Angularze oraz stworzyć kilka prostych projektów.
