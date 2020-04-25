@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Angular 9 – aplikacja kalkulator
+title: Angular 9 – aplikacja kalkulator tutorial
 date: 2020-04-25T08:16:12.875Z
 description: >
   W tym poście postaram się w czytelny sposób pokazać jak stworzyć prostą
