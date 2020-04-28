@@ -16,6 +16,9 @@ tags:
   - omnibus
   - git
   - własny serwer
+  - own GitLab
+  - GitLab installation
+  - GitLab instalacja
 ---
 ![GitLab](/img/gitlab.jpg "GitLab")
 
@@ -50,22 +53,42 @@ Podczas instalacji postfix pojawi się okno konfiguracyjne. Na początku wybiera
 Dodanie repozytoriów GitLab
 
 ```bash
-curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+cd /tmp
 ```
-
-Kolejnym krokiem jest instalacja aplikacji. W miejscu  **„http://gitlab.example.com”** 
-
-wpisujemy nazwę naszej domeny lub adres IP komputera na którym instalujemy GitLab. 
 
 ```bash
-sudo EXTERNAL_URL="http://gitlab.example.com" apt-get install gitlab-ee
+curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh
 ```
 
+Kolejnym krokiem jest uruchomienie pobranego skryptu poprzez poniższą komendę:
 
+```bash
+sudo bash /tmp/script.deb.sh
+```
 
-I to wszystko. Podczas pierwszego uruchomienia w przeglądarce zostaniemy poproszeni o ustanowienie hasła. Do logowania w polu username wpisujemy root.
+Po wykonaniu skryptu przystępujemy do instalacji z wykorzystaniem apt:
 
+```bash
+sudo apt-get install gitlab-ce
+```
 
+Po poprawnie przeprowadzonej instalacji musimy jeszcze odpowiednio skonfigurować adres http/s na którym będzie działać nasza aplikacja. W tym celu edytujemy plik gitlab.rb.
+
+```bash
+sudo nano /etc/gitlab/gitlab.rb
+```
+
+W otwartym oknie znajdujemy linie z zapisem external_url 'tutaj wpisujemy adres http/s' systemu na którym zainstalowaliśmy GitLab. 
+
+Po powyższej czynności zapisujemy plik ctrl + o i zamykamy edytor ctrl + x. Następnie musimy zainicjować zmianę konfiguracji. W tym celu wpisujemy poniższą komendę:
+
+```bash
+sudo gitlab-ctl reconfigure
+```
+
+Po chwili gdy cała akcja zostaje zakończona sukcesem możemy przejść do przeglądarki i wpisać w niej adres, który zadeklarowaliśmy w konfiguracji GitLaba. 
+
+I to wszystko. Podczas pierwszego uruchomienia w przeglądarce zostaniemy poproszeni o ustanowienie hasła. Do logowania w polu **username** wpisujemy **root**.
 
 Przydatne linki:
 
