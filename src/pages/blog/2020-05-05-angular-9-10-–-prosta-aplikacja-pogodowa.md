@@ -78,7 +78,9 @@ Do styles:
 Oraz scripts: 
 
 ```js
-"scripts": ["node_modules/jquery/dist/jquery.slim.js","node_modules/popper.js/dist/umd/popper.js","node_modules/bootstrap/dist/js/bootstrap.js"]},
+"scripts": ["node_modules/jquery/dist/jquery.slim.js",
+"node_modules/popper.js/dist/umd/popper.js",
+"node_modules/bootstrap/dist/js/bootstrap.js"]},
 ```
 
 Tworzenie componentu
@@ -127,7 +129,7 @@ Przechodzimy do pliku _src/app/weather/weather.component.html_ i usuwamy całą 
 
 Następnie wpisujemy poniższy kod odpowiedzialny za strukturę aplikacji:
 
-```
+```js
 <div class="container">
   <div class="card">
     <div class="card__image-container">
@@ -170,7 +172,7 @@ Po uruchomieniu poprzez _ng serve -- open_, aplikacja wygląda następująco.
 
 Przejdźmy teraz do pliku _src/app/weather/weather.component.css_ i przepiszmy tam następujący kod mający za zadanie nadać trochę smaczku naszej aplikacji.
 
-```
+```css
 * {
   box-sizing: border-box;
   line-height: 1.5;
@@ -281,32 +283,49 @@ Za pomocą dyrektyw takich jak _ngModel_ możemy natomiast stworzyć połączeni
 W tym celu przechodzimy do pliku _src/app/app.module.ts_ i importujemy wspomniany moduł.
 
 ```js
-...import { ReactiveFormsModule } from '@angular/forms';@NgModule({...})...
+...
+import { ReactiveFormsModule } from '@angular/forms';
+@NgModule({...})
+...
 ```
 
 Dodajemy go również do listy imports.
 
 ```js
-...@NgModule({    ...    imports: [    BrowserModule,    WeatcherComponent,    ReactiveFormsModule    ]    ...})..
+...@NgModule({
+    ...
+    imports: [
+    BrowserModule,
+    WeatcherComponent,
+    ReactiveFormsModule
+    ]
+    ...
+})
+..
 ```
 
 Następnie przechodzimy do pliku _/src/app/weather/weather.component.ts_ i importujemy klasy _FormBuilder_ oraz _FormGroup_. 
 
 ```js
-import { Component, OnInit } from '@angular/core';import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+ import { FormBuilder, FormGroup } from '@angular/forms';
 ```
 
 \
 Kolejnym krokiem jest utworzenie i export zmiennej:
 
 ```js
-export class WeatherComponent implements OnInit {   public weatherSearchForm: FormGroup;   constructor() { }...
+export class WeatherComponent implements OnInit {
+   public weatherSearchForm: FormGroup;   constructor() { }
+...
 ```
 
 Za każdym razem wykonując jakąś akcję na formularzu, będziemy odwoływać się do zmiennej _weatherSearchForm_. Następnie dodajemy zaimportowany _FormBuilder_ do constructora. 
 
 ```js
-...public weatherSearchForm: FormGroup;constructor(private formBuilder: FormBuilder) {}...
+...
+public weatherSearchForm: FormGroup;constructor(private formBuilder: FormBuilder) {}
+...
 ```
 
 Poprzez dodanie _formBuilder_ do constructora uzyskujemy możliwość użycia go jako class w componentach. 
@@ -314,7 +333,11 @@ Poprzez dodanie _formBuilder_ do constructora uzyskujemy możliwość użycia go
 Kolejnym krokiem jest zainicjowanie naszego formularza w sekcji _ngOnInit_ w tym samym pliku, w tym celu dodajemy następujący wpis:
 
 ```js
-ngOnInit() {    this.weatherSearchForm = this.formBuilder.group({    location: ['']    });  }
+ngOnInit() {
+    this.weatherSearchForm = this.formBuilder.group({
+    location: ['']
+    });
+  }
 ```
 
 ## Logika formularza oraz dodanie obsługi API
@@ -326,7 +349,9 @@ Przechodzimy do _src/app/weather/weather.component.ts_
 Pod _ngOnInit_ dodajemy następującą metodę:
 
 ```js
-sendToAPIXU( formValues ) {        } );  }
+sendToAPIXU( formValues ) {
+        } );
+  }
 ```
 
 Będzie miała ona za zadanie przesłanie naszego formularza do API https://weatherstack.com/ 
@@ -335,7 +360,7 @@ Będzie miała ona za zadanie przesłanie naszego formularza do API https://weat
 
 Aby w Angularze wykonać zapytanie HTTP należy importować odpowiedni moduł. W tym celu przechodzimy do pliku _src/app/app/module.ts_ i dodajemy następujące wiersze:
 
-```
+```js
 ...
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -365,18 +390,24 @@ Polecenie te utworzy dwa pliki _apixu.service.ts_ oraz _apixu.service.spec.ts_
 Musimy teraz odpowiednio poinformować naszą aplikację o nowo utworzonym serwisie, w tym celu otwieramy _src/app/app.module.ts_ i dodajemy następujące wiersze:
 
 ```js
-...import { HttpClientModule } "@angular/common/http";import { ApixuService } from "./apixu.service";...
+...import { HttpClientModule } "@angular/common/http";
+import { ApixuService } from "./apixu.service";
+...
 ```
 
 Następnie dodajemy ApixuService jako provider: 
 
 ```js
-...@NgModule({    ...    providers: [ApixuService],    ...})...
+...@NgModule({
+    ...
+    providers: [ApixuService],
+    ...})
+...
 ```
 
 Po tych czynnościach otwieramy utworzony serwis _src/app/apixu.service.ts_ , usuwamy znajdujący się tam kod i dodajemy poniższy:
 
-```
+```js
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 @Injectable( {
@@ -407,7 +438,7 @@ Kopiujemy API Access Key i wklejamy na miejsce **Yours_API_KEY** bez spacji.
 
 Serwis jest gotowy. Jedyne co musimy zrobić to zaimportować go do componentu. Przechodzimy do _src/app/weather/weather.component.ts_ i dodajemy następujący kod:
 
-```
+```js
 ...
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { ApixuService } from "../apixu.service";
@@ -431,7 +462,7 @@ sendToAPIXU( formValues ) {
 
 Jednym z ostatnich kroków jest stworzenie zmiennej _weatherData_ i przypisanie jej do zwróconego przez API kodu JSON. 
 
-```
+```js
 export class WeatherComponent implements OnInit {
 public weatherSearchForm: FormGroup;
 public weatherData: any;
@@ -447,7 +478,7 @@ sendToAPIXU(formValues){
 
 Cały plik _src/app/weather/weather.component.ts_ powinien wyglądać w następujący sposób:
 
-```
+```js
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApixuService } from '../apixu.service';
