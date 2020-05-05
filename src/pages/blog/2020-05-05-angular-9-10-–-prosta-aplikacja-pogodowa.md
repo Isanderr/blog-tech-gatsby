@@ -128,7 +128,38 @@ Przechodzimy do pliku _src/app/weather/weather.component.html_ i usuwamy całą 
 Następnie wpisujemy poniższy kod odpowiedzialny za strukturę aplikacji:
 
 ```
-<div class="container">  <div class="card">    <div class="card__image-container">      <!-- <img class="card__image" src="assets/firewatch.jpg" alt=""> -->      <h3 class="text-center my-4">Search for Weather:</h3>      <form [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)">        <div class="form-group">          <input class="form-control" type="text" id="weatherLocation" aria-describedby="weatherLocation"            placeholder="Please input a Location" formControlName="location" />        </div>        <div class="text-center">          <button type="submit" class="btn btn-danger btn-md"> Search for the weather </button>        </div>      </form>    </div>  </div>  <div class="card right">    <h3 class="text-center my-4">Weather Details:</h3>    <p class="text-center">Current weather conditions: <span        class="font-weight-bold">{{this.weatherData?.current.weather_descriptions}}</span></p>    <p class="text-center">Temperature in Degrees Celsius: <span        class="font-weight-bold">{{this.weatherData?.current.temperature}}</span></p>    <p class="text-center">Pressure in hPa: <span class="font-weight-bold">{{this.weatherData?.current.pressure}}</span>    </p>    <p class="text-center">Feels like in Degrees Celsius: <span        class="font-weight-bold">{{this.weatherData?.current.feelslike}}</span></p>    <p class="text-center">Humidity: <span class="font-weight-bold">{{this.weatherData?.current.humidity}}</span></p>    <p class="text-center">Location Searched: <span        class="font-weight-bold">{{this.weatherData?.location.country}}</span>, <span        class="font-weight-bold">{{this.weatherData?.location.name}}</span></p>  </div></div>
+<div class="container">
+  <div class="card">
+    <div class="card__image-container">
+      <!-- <img class="card__image" src="assets/firewatch.jpg" alt=""> -->
+      <h3 class="text-center my-4">Search for Weather:</h3>
+      <form [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)">
+        <div class="form-group">
+          <input class="form-control" type="text" id="weatherLocation" aria-describedby="weatherLocation"
+            placeholder="Please input a Location" formControlName="location" />
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-danger btn-md"> Search for the weather </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="card right">
+    <h3 class="text-center my-4">Weather Details:</h3>
+    <p class="text-center">Current weather conditions: <span
+        class="font-weight-bold">{{this.weatherData?.current.weather_descriptions}}</span></p>
+    <p class="text-center">Temperature in Degrees Celsius: <span
+        class="font-weight-bold">{{this.weatherData?.current.temperature}}</span></p>
+    <p class="text-center">Pressure in hPa: <span class="font-weight-bold">{{this.weatherData?.current.pressure}}</span>
+    </p>
+    <p class="text-center">Feels like in Degrees Celsius: <span
+        class="font-weight-bold">{{this.weatherData?.current.feelslike}}</span></p>
+    <p class="text-center">Humidity: <span class="font-weight-bold">{{this.weatherData?.current.humidity}}</span></p>
+    <p class="text-center">Location Searched: <span
+        class="font-weight-bold">{{this.weatherData?.location.country}}</span>, <span
+        class="font-weight-bold">{{this.weatherData?.location.name}}</span></p>
+  </div>
+</div>
 ```
 
 Zaczynając od góry, cała aplikacja zamknięta jest w _<div>_ o nazwie _container_, następnie została podzielona na dwie sekcję card. W pierwszej umieszczony jest formularz w raz z buttonem odpowiedzialny za przechwytywanie zapytać userów. W drugiej natomiast widoczna jest część mająca za zadanie wyświetlania przechwyconych od API https://weatherstack.com/ informacji.
@@ -140,7 +171,89 @@ Po uruchomieniu poprzez _ng serve -- open_, aplikacja wygląda następująco.
 Przejdźmy teraz do pliku _src/app/weather/weather.component.css_ i przepiszmy tam następujący kod mający za zadanie nadać trochę smaczku naszej aplikacji.
 
 ```
-* {  box-sizing: border-box;  line-height: 1.5;  font-family: 'Open Sans', sans-serif;}img {  max-width: 100%;}.container {  margin: 0 auto;  display: flex;  align-items: center;  justify-content: center;  height: 100vh;}.card {  position: relative;  background: #333;  width: 400px;  height: 75vh;  border-radius: 6px 0 0 6px;  padding: 2rem;  color: #aaa;  box-shadow: 0 .25rem .25rem rgba(0, 0, 0, 0.2),    0 0 1rem rgba(0, 0, 0, 0.2);  overflow: hidden;}.right {  border-radius: 0 6px 6px 0;}.card__image-container {  margin: -2rem -2rem 1rem -2rem;}.card__line {  opacity: 0;  animation: LineFadeIn .8s .8s forwards ease-in;}.card__image {  opacity: 0;  animation: ImageFadeIn .8s 1.4s forwards;}.card__title {  color: white;  margin-top: 0;  font-weight: 800;  letter-spacing: 0.01em;}.card__content {  margin-top: -1rem;  opacity: 0;  animation: ContentFadeIn .8s 1.6s forwards;}.card__svg {  position: absolute;  left: 0;  top: 115px;}@keyframes LineFadeIn {  0% {    opacity: 0;    d: path("M 0 300 Q 0 300 0 300 Q 0 300 0 300 C 0 300 0 300 0 300 Q 0 300 0 300 ");    stroke: #fff;  }  50% {    opacity: 1;    d: path("M 0 300 Q 50 300 100 300 Q 250 300 350 300 C 350 300 500 300 650 300 Q 750 300 800 300");    stroke: #888BFF;  }  100% {    opacity: 1;    d: path("M -2 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 802 400");    stroke: #545581;  }}@keyframes ContentFadeIn {  0% {    transform: translateY(-1rem);    opacity: 0;  }  100% {    transform: translateY(0);    opacity: 1;  }}
+* {
+  box-sizing: border-box;
+  line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
+}
+img {
+  max-width: 100%;
+}
+.container {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.card {
+  position: relative;
+  background: #333;
+  width: 400px;
+  height: 75vh;
+  border-radius: 6px 0 0 6px;
+  padding: 2rem;
+  color: #aaa;
+  box-shadow: 0 .25rem .25rem rgba(0, 0, 0, 0.2),
+    0 0 1rem rgba(0, 0, 0, 0.2);  overflow: hidden;
+}
+.right {
+  border-radius: 0 6px 6px 0;
+}
+.card__image-container {
+  margin: -2rem -2rem 1rem -2rem;
+}
+.card__line {
+  opacity: 0;
+  animation: LineFadeIn .8s .8s forwards ease-in;
+}
+.card__image {
+  opacity: 0;
+  animation: ImageFadeIn .8s 1.4s forwards;
+}
+.card__title {
+  color: white;
+  margin-top: 0;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+.card__content {
+  margin-top: -1rem;
+  opacity: 0;
+  animation: ContentFadeIn .8s 1.6s forwards;
+}
+.card__svg {
+  position: absolute;
+  left: 0;
+  top: 115px;
+}
+@keyframes LineFadeIn {
+  0% {
+    opacity: 0;
+    d: path("M 0 300 Q 0 300 0 300 Q 0 300 0 300 C 0 300 0 300 0 300 Q 0 300 0 300 ");
+    stroke: #fff;
+  }
+  50% {
+    opacity: 1;
+    d: path("M 0 300 Q 50 300 100 300 Q 250 300 350 300 C 350 300 500 300 650 300 Q 750 300 800 300");
+    stroke: #888BFF;
+  }
+  100% {
+    opacity: 1;
+    d: path("M -2 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 802 400");
+    stroke: #545581;
+  }
+}
+@keyframes ContentFadeIn {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 ```
 
 Aplikacja powinna wyglądać teraz mniej więcej tak.
@@ -174,7 +287,7 @@ W tym celu przechodzimy do pliku _src/app/app.module.ts_ i importujemy wspomnian
 Dodajemy go również do listy imports.
 
 ```js
-...@NgModule({    ...    imports: [    BrowserModule,    WeatcherComponent,    ReactiveFormsModule    ]    ...})...
+...@NgModule({    ...    imports: [    BrowserModule,    WeatcherComponent,    ReactiveFormsModule    ]    ...})..
 ```
 
 Następnie przechodzimy do pliku _/src/app/weather/weather.component.ts_ i importujemy klasy _FormBuilder_ oraz _FormGroup_. 
@@ -223,7 +336,20 @@ Będzie miała ona za zadanie przesłanie naszego formularza do API https://weat
 Aby w Angularze wykonać zapytanie HTTP należy importować odpowiedni moduł. W tym celu przechodzimy do pliku _src/app/app/module.ts_ i dodajemy następujące wiersze:
 
 ```
-...import { ReactiveFormsModule } from '@angular/forms';import { HttpClientModule } from '@angular/common/http';@NgModule({    ...    imports: [        BrowserModule,        RouterModule.forRoot(allAppRoutes),        ReactiveFormsModule,        HttpClientModule    ]    ...})...
+...
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+@NgModule({
+    ...
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(allAppRoutes),
+        ReactiveFormsModule,
+        HttpClientModule
+    ]
+    ...
+})
+...
 ```
 
 Teraz zajmiemy się napisaniem zapytania HTTP do API weatherstack. W tym celu najlepszą praktyką jest utworzenie oddzielnego serwisu który będzie się tym zajmował. Tak utworzony serwis pozwoli nam odwoływać się do zewnętrznego API w każdym componencie, w którym zajdzie taka potrzeba. 
@@ -251,7 +377,20 @@ Następnie dodajemy ApixuService jako provider:
 Po tych czynnościach otwieramy utworzony serwis _src/app/apixu.service.ts_ , usuwamy znajdujący się tam kod i dodajemy poniższy:
 
 ```
-import { Injectable } from '@angular/core';import { HttpClient } from '@angular/common/http';@Injectable( {  providedIn: 'root'} )export class ApixuService {  constructor ( private http: HttpClient ) { }  getWeather( location ) {    return this.http.get(      'http://api.weatherstack.com/current?access_key=Yours_API_KEY&query='+location    );  }}
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+@Injectable( {
+  providedIn: 'root'
+} )
+export class ApixuService {
+
+  constructor ( private http: HttpClient ) { }
+  getWeather( location ) {
+    return this.http.get(
+      'http://api.weatherstack.com/current?access_key=Yours_API_KEY&query='+location
+    );
+  }
+}
 ```
 
 Decorator _@Injectable_ pozwala nam użyć serwisu wewnątrz componentów. Natomiast dzięki _HttpClient_ możemy wykonać zapytanie do API weatherstack.
@@ -269,19 +408,75 @@ Kopiujemy API Access Key i wklejamy na miejsce **Yours_API_KEY** bez spacji.
 Serwis jest gotowy. Jedyne co musimy zrobić to zaimportować go do componentu. Przechodzimy do _src/app/weather/weather.component.ts_ i dodajemy następujący kod:
 
 ```
-...import { FormBuilder, FormGroup } from "@angular/forms";import { ApixuService } from "../apixu.service";...constructor(    private formBuilder: FormBuilder,    private apixuService: ApixuService  ) {}...ngOnInit(){...}…sendToAPIXU( formValues ) {    this.apixuService      .getWeather( formValues.location )      .subscribe( data => {        this.weatherData=data;        console.log( this.weatherData );      } );  }
+...
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { ApixuService } from "../apixu.service";
+...
+constructor(
+    private formBuilder: FormBuilder,
+    private apixuService: ApixuService
+  ) {}
+...
+ngOnInit(){...}
+…
+sendToAPIXU( formValues ) {
+    this.apixuService
+      .getWeather( formValues.location )
+      .subscribe( data => {
+        this.weatherData=data;
+        console.log( this.weatherData );
+      } );
+  }
 ```
 
 Jednym z ostatnich kroków jest stworzenie zmiennej _weatherData_ i przypisanie jej do zwróconego przez API kodu JSON. 
 
 ```
-export class WeatherComponent implements OnInit {public weatherSearchForm: FormGroup;public weatherData: any;...sendToAPIXU(formValues){    this.apixuService    .getWeather(formValues.location)    .subscribe(data => this.weatherData = data)      console.log(this.weatherData);    }}
+export class WeatherComponent implements OnInit {
+public weatherSearchForm: FormGroup;
+public weatherData: any;
+...
+sendToAPIXU(formValues){
+    this.apixuService
+    .getWeather(formValues.location)
+    .subscribe(data => this.weatherData = data)
+      console.log(this.weatherData);
+    }
+}
 ```
 
 Cały plik _src/app/weather/weather.component.ts_ powinien wyglądać w następujący sposób:
 
 ```
-import { Component, OnInit } from '@angular/core';import { FormBuilder, FormGroup } from '@angular/forms';import { ApixuService } from '../apixu.service';@Component( {  selector: 'app-weather',  templateUrl: './weather.component.html',  styleUrls: ['./weather.component.css']} )export class WeatherComponent implements OnInit {  public weatherSearchForm: FormGroup;  public weatherData: any;  constructor (    private formBuilder: FormBuilder,    private apixuService: ApixuService  ) { }  ngOnInit(): void {    this.weatherSearchForm=this.formBuilder.group( {      location: ['']    } );  }  sendToAPIXU( formValues ) {    this.apixuService      .getWeather( formValues.location )      .subscribe( data => {        this.weatherData=data;        console.log( this.weatherData );      } );  }}
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ApixuService } from '../apixu.service';
+@Component( {
+  selector: 'app-weather',
+  templateUrl: './weather.component.html',
+  styleUrls: ['./weather.component.css']
+} )
+export class WeatherComponent implements OnInit {
+  public weatherSearchForm: FormGroup;
+  public weatherData: any;
+  constructor (
+    private formBuilder: FormBuilder,
+    private apixuService: ApixuService
+  ) { }
+  ngOnInit(): void {
+    this.weatherSearchForm=this.formBuilder.group( {
+      location: ['']
+    } );
+  }
+  sendToAPIXU( formValues ) {
+    this.apixuService
+      .getWeather( formValues.location )
+      .subscribe( data => {
+        this.weatherData=data;
+        console.log( this.weatherData );
+      } );
+  }
+}
 ```
 
 Jeżeli chcecie dowiedzieć się jakie jeszcze dane możemy przechwycić z API weatherstack wystarczy, że po wykonaniu zapytania o wybraną przez nas lokalizację przejdziemy w przeglądarce do narzędzi deweloperkich (najczęściej klawisz F12), w zakładce wybierzemy Console i rozwiniemy listę Object.
